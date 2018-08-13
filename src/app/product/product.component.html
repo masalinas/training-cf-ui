@@ -1,0 +1,18 @@
+<nz-table #productTable [nzData]="displayProducts" [nzPageSize]="50" [nzScroll]="{ y: '500px' }">
+  <thead (nzSortChange)="sort($event)" nzSingleSort>
+    <tr>
+      <th nzShowSort nzSortKey="code">Code</th>
+      <th nzShowSort nzSortKey="description">Description</th>
+      <th nzShowSort nzSortKey="price">Price</th>
+      <th nzShowSort nzSortKey="active">Active</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of displayProducts">
+      <td>{{product.code}}</td>
+      <td><a target="_blank" href="https://simple.wikipedia.org/wiki/{{product.description}}">{{product.description}}</a></td>
+      <td>{{product.price}}</td>
+      <td>{{product.active}}</td>
+    </tr>
+  </tbody>
+</nz-table>

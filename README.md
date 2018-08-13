@@ -1,2 +1,2 @@
 # training-cf-ui
-Pivotal Developer Training UI
+Pivotal Developer Training
