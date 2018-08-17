@@ -1,2 +1,2 @@
 # training-cf-ui
-Pivotal Developer Training
+Pivotal Developer Training Angular front-end
