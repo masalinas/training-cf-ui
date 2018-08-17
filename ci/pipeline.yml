@@ -17,7 +17,7 @@ resources:
 - name: pull-artifact
   type: git
   source:
-    uri: https://github.com/masalinas/training-cf-ui
+    uri: git@github.com:masalinas/training-cf-ui.git
     branch: master
 
 - name: deploy-artifact
