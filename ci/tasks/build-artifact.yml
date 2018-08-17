@@ -4,7 +4,7 @@ platform: linux
 image: docker:///johnpapa/angular-cli
 
 inputs:
-  - name: pull-artifact   
+  - name: repo-training-cf-ui   
 
 run:
-  path: pull-artifact/ci/tasks/build-artifact.sh
+  path: repo-training-cf-ui/ci/tasks/build-artifact.sh

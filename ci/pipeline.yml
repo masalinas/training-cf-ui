@@ -4,17 +4,17 @@ jobs:
   public: true
   serial: true
   plan:
-  - get: pull-artifact
+  - get: repo-training-cf-ui
     trigger: true
   - task: build-artifact
-    file: pull-artifact/ci/tasks/build-artifact.yml
+    file: repo-training-cf-ui/ci/tasks/build-artifact.yml
   - put: deploy-artifact
     params:
       manifest: training-cf-ui/manifest.yml
       path: training-cf-ui/
 
 resources:
-- name: pull-artifact
+- name: repo-training-cf-ui
   type: git
   source:
     uri: https://github.com/masalinas/training-cf-ui.git
