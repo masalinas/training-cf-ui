@@ -1,5 +1,10 @@
 #!/bin/sh
 
 cd training-cf-ui
-npm install
-ng build --prod
+
+node -v
+npm -v
+ng -v
+
+#npm install
+#ng build --prod
