@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
-set -e
+#!/bin/sh
 
 ng build --prod
