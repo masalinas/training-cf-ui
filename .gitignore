@@ -65,3 +65,6 @@ dist
 
 # Visual code configuration
 .vscode
+
+# CF credentials for concourse
+ci/credentials.yml
