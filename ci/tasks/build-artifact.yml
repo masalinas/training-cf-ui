@@ -4,7 +4,7 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: birgerk/angular-cli
+    repository: node
 
 inputs:
   - name: training-cf-ui   
