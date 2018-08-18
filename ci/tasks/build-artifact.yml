@@ -1,11 +1,10 @@
 ---
-platform: darwin
+platform: linux
 
 image_resource:
   type: docker-image
   source:
-    repository: alexsuch/angular-cli
-    tag: 'latest'
+    repository: birgerk/angular-cli
 
 inputs:
   - name: training-cf-ui   
