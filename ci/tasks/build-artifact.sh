@@ -3,12 +3,12 @@
 # set into source foulder
 cd training-cf-ui
 
+# install dependencies
+#npm install
+
 # check angular cli version
 npm install -g @angular/cli
 ng -v
-
-# install dependencies
-#npm install
 
 # compile in production mode
 #ng build --prod
