@@ -15,8 +15,10 @@ cf logs training.cf.ui --recent
 fly --target pivotal login --concourse-url http://127.0.0.1:8080
 fly --target pivotal sync
 
-# remove a pipeline in concourse
+# destroy a pipeline in concourse
 fly -t pivotal destroy-pipeline --pipeline training-cf-ui
+
+# reactive a job in concourse
 fly -t pivotal unpause-job --job training-cf-ui/ci-training-cf-ui
 
 # add a pipeline in concourse

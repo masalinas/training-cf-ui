@@ -4,10 +4,11 @@
 cd training-cf-ui
 
 # install dependencies
-npm install
+#npm install
+ls -all
 
 # check angular cli version
-npm install -g @angular/cli
+#npm install -g @angular/cli
 ng -v
 
 # compile in production mode
