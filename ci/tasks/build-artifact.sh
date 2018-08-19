@@ -9,7 +9,7 @@ ls -all
 
 # check angular cli version
 #npm install -g @angular/cli
-ng -v
+#ng -v
 
 # compile in production mode
 #ng build --prod
