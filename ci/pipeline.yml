@@ -12,7 +12,7 @@ jobs:
     params:
       manifest: training-cf-ui/manifest.yml
       path: training-cf-ui/
-      
+
 resources:
 - name: training-cf-ui
   type: git
@@ -24,7 +24,7 @@ resources:
   type: cf
   source:
     api: https://api.run.pivotal.io
-    username: ((cf-user))
+    username: ((cf-user))                
     password: ((cf-password))
     organization: ((cf-org))
     space: ((cf-space))
