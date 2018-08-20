@@ -19,3 +19,6 @@ ng -v
 
 # compile in production mode
 ng build --prod
+
+# debug tasks
+ls -all

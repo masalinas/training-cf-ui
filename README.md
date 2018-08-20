@@ -27,9 +27,6 @@ fly -t pivotal set-pipeline -p training-cf-ui --config ./ci/pipeline.yml --load-
 # reactive a pipeline in concourse
 fly -t pivotal unpause-pipeline -p training-cf-ui
 
-# update pipeline in concourse
-fly sp -t pivotal -c pipeline.yml -p training-cf-ui
-
 # debug a task pipeline/job in concourse
 fly -t pivotal intercept -j training-cf-ui/ci-training-cf-ui -s build-training-cf-ui
 
@@ -39,8 +36,11 @@ fly -t pivotal watch -j training-cf-ui/ci-training-cf-ui
 # list all builds in concourse
 fly -t pivotal builds
 
+# update pipeline in concourse
+fly sp -t pivotal -c pipeline.yml -p training-cf-ui
+
 # trigger a job in concourse
 fly -t pivotal trigger-job -j training-cf-ui/ci-training-cf-ui
 
 # trigger a job and watch output in concours
-fly -t pivotal trigger-job -j training-cf-ui/ci-training-cf-ui -w
+fly -t pivotal trigger-job -w -j training-cf-ui/ci-training-cf-ui
