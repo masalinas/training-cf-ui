@@ -4,9 +4,10 @@
 cd training-cf-ui
 
 # install dependencies
-#npm install
-ls -all
+npm install
 
+# debug tasks
+ls -all
 node -v
 npm -v
 
