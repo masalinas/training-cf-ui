@@ -18,4 +18,4 @@ npm install -g @angular/cli
 ng -v
 
 # compile in production mode
-#ng build --prod
+ng build --prod
