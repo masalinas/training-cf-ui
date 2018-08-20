@@ -12,8 +12,10 @@ node -v
 npm -v
 
 # check angular cli version
-#npm install -g @angular/cli
-#ng -v
+npm install -g @angular/cli
+
+# debug tasks
+ng -v
 
 # compile in production mode
 #ng build --prod
