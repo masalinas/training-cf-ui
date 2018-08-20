@@ -6,6 +6,9 @@ cd training-cf-ui
 # install dependencies
 npm install
 
+# remove .cache node_modules to avoid mode erros
+rm node_modules/.cache/ -R    
+
 # debug tasks
 ls -all
 node -v
@@ -15,7 +18,7 @@ npm -v
 npm install -g @angular/cli
 
 # debug tasks
-ng -v
+#ng -v
 
 # compile in production mode
 ng build --prod
