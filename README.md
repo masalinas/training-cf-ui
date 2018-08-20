@@ -37,7 +37,7 @@ fly -t pivotal watch -j training-cf-ui/ci-training-cf-ui
 fly -t pivotal builds
 
 # update pipeline in concourse
-fly sp -t pivotal -c pipeline.yml -p training-cf-ui
+fly sp -t pivotal -p training-cf-ui -c ./ci/pipeline.yml -l ./ci/credentials.yml
 
 # trigger a job in concourse
 fly -t pivotal trigger-job -j training-cf-ui/ci-training-cf-ui
