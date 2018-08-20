@@ -1,6 +1,4 @@
 ---
 applications:
 - name: training.cf.ui
-  memory: 256M
-  instances: 1
   command: "node server.js"
