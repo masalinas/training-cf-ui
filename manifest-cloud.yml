@@ -3,4 +3,4 @@ applications:
 - name: training.cf.ui
   memory: 512M
   instances: 1
-  command: node server.js
+  command: "node server.js"
