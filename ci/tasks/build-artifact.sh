@@ -7,8 +7,8 @@ cd training-cf-ui
 #npm install
 ls -all
 
-node -version
-npm -version
+node -v
+npm -v
 
 # check angular cli version
 #npm install -g @angular/cli
