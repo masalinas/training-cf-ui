@@ -6,8 +6,9 @@ cd training-cf-ui
 # install dependencies
 npm install
 
-# remove .cache node_modules to avoid mode erros
-rm node_modules/.cache/ -R  
+# remove .cache node_modules to avoid mode errors
+rm ./node_modules/.cache/ -R
+ll ./node_modules/.cache
 
 # debug tasks
 ls -all
