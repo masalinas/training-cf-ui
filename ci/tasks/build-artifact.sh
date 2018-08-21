@@ -7,6 +7,9 @@ echo 'Before cd'
 pwd
 ls -all
 
+echo 'List build folder'
+ls /tmp/build -all
+
 # set into source foulder
 cd training-cf-ui
 
