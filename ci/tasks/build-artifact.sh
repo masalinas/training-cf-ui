@@ -45,9 +45,8 @@ ng build --prod
 echo 'preparing App build folder'
 mkdir build
 
-cp manifest-cloud.yml ./build
 cp package.json ./build
 cp server.js ./build
 cp -R ./dist ./build
 
-ls ./build -all
+#ls ./build -all
