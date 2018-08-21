@@ -42,11 +42,11 @@ ng build --prod
 #ls -all
 
 # preparing build folder
-echo 'preparing App build folder'
-mkdir build
+echo 'preparing App dist folder'
 
-cp package.json ./build
-cp server.js ./build
-cp -R ./dist ./build
+cp package.json ../training-cf-ui-dist
+cp server.js ../training-cf-ui-dist
+cp -R ./dist ../training-cf-ui-dist
+cp manifest-cloud.yml ../training-cf-ui-dist
 
 #ls ./build -all
