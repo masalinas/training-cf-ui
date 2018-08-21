@@ -1,5 +1,9 @@
 #!/bin/sh
 
+echo 'Before cd'
+pwd
+ls -all
+
 # set into source foulder
 cd training-cf-ui
 
