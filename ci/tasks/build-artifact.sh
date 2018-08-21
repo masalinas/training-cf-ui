@@ -40,6 +40,5 @@ ng build --prod
 pwd
 ls -all
 
-echo 'Moving dist folder'
-mv ./dist /tmp/build/put/training-cf-ui 
-ls /tmp/build/put/training-cf-ui  -all
+echo 'go to previous folder'
+cd ..
