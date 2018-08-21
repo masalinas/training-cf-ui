@@ -41,9 +41,12 @@ ng build --prod
 #pwd
 #ls -all
 
-# preparing dist folder
-echo 'preparing app dist folder'
+# preparing build folder
+echo 'preparing app build folder'
 mkdir build
+
+ls -all
+
 cp ./training-cf-ui/manifest-cloud.yml ./build
 cp ./training-cf-ui/package.json ./build
 cp ./training-cf-ui/server.js ./build
