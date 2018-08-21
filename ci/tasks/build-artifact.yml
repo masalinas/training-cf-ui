@@ -9,8 +9,5 @@ image_resource:
 inputs:
   - name: training-cf-ui   
 
-outputs:
-- name: training-cf-ui-dist
-
 run:
   path: training-cf-ui/ci/tasks/build-artifact.sh

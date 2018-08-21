@@ -3,4 +3,5 @@ applications:
 - name: training.cf.ui
   memory: 256M
   instances: 1
+  path: dist
   command: node server.js
