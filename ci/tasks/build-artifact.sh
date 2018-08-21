@@ -11,11 +11,11 @@
 #ls /tmp/build -all
 
 # set into source foulder
-echo 'set in app folder'
+echo 'set into App folder'
 cd training-cf-ui
 
 # install dependencies
-echo 'pulling app dependencies'
+echo 'pulling App dependencies'
 npm install
 
 # remove .cache node_modules to avoid mode errors
@@ -42,14 +42,12 @@ ng build --prod
 #ls -all
 
 # preparing build folder
-echo 'preparing app build folder'
+echo 'preparing App build folder'
 mkdir build
 
-ls -all
-
-cp ./training-cf-ui/manifest-cloud.yml ./build
-cp ./training-cf-ui/package.json ./build
-cp ./training-cf-ui/server.js ./build
-cp -R ./training-cf-ui/dist ./build
+cp manifest-cloud.yml ./build
+cp package.json ./build
+cp server.js ./build
+cp -R ./dist ./build
 
 ls ./build -all
