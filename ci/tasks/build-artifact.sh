@@ -28,6 +28,9 @@ ng -v
 # compile in production mode (AOT mode)
 ng build --prod
 
+# copy dist folder to destination
+cp -R ./dist ../training-cf-ui-dist
+
 # debug tasks
 pwd
-ls -all
+ls ./training-cf-ui-dist -all
