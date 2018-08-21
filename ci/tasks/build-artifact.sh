@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo 'Check all folders'
+echo 'Check all folders '
 ls /tmp -all
 
 echo 'Before cd'
