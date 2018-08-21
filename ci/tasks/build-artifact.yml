@@ -7,10 +7,7 @@ image_resource:
     repository: node
 
 inputs:
-  - name: training-cf-ui   
-
-outputs:
-  - name: training-cf-ui-dist
+  - name: training-cf-ui
 
 run:
   path: training-cf-ui/ci/tasks/build-artifact.sh
