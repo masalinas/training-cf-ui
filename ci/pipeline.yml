@@ -11,7 +11,7 @@ jobs:
   - put: deploy-training-cf-ui
     params:
       manifest: training-cf-ui-dist/manifest-cloud.yml
-      path: training-cf-ui-dist
+      path: training-cf-ui-dist/
 
 resources:
 - name: training-cf-ui
