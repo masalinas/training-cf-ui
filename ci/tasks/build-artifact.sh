@@ -43,11 +43,10 @@ ng build --prod
 
 # preparing dist folder
 echo 'preparing app dist folder'
-cd ..
-mkdir training-cf-ui-dist
-cp ./training-cf-ui/manifest-cloud.yml ./training-cf-ui-dist
-cp ./training-cf-ui/package.json ./training-cf-ui-dist
-cp ./training-cf-ui/server.js ./training-cf-ui-dist
-cp -R ./training-cf-ui/dist ./training-cf-ui-dist
+mkdir build
+cp ./training-cf-ui/manifest-cloud.yml ./build
+cp ./training-cf-ui/package.json ./build
+cp ./training-cf-ui/server.js ./build
+cp -R ./training-cf-ui/dist ./build
 
-ls ./training-cf-ui-dist -all
+ls ./build -all

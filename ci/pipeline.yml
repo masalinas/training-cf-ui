@@ -10,7 +10,7 @@ jobs:
     file: training-cf-ui/ci/tasks/build-artifact.yml
   - put: deploy-training-cf-ui
     params:
-      manifest: training-cf-ui-dist/manifest-cloud.yml
+      manifest: training-cf-ui/build/manifest-cloud.yml
 
 resources:
 - name: training-cf-ui
