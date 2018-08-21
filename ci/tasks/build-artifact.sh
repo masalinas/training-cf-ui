@@ -39,6 +39,3 @@ ng build --prod
 # debug tasks
 pwd
 ls -all
-
-echo 'go to previous folder'
-cd ..
