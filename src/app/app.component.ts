@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { LoginForm, AuthControllerService } from './shared/sdk';
+
+import { AuthService } from './auth/api/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +10,9 @@ import { LoginForm, AuthControllerService } from './shared/sdk';
 export class AppComponent {
   title = 'app';
 
-  loginForm : LoginForm;
-
-  constructor(private authApi: AuthControllerService) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
-    // login and recover a JWT      
-    this.loginForm = {};
-    this.loginForm.username = 'admin';
-    this.loginForm.password = 'thingtrack';
-
-    this.authApi.authenticateUserUsingPOST(this.loginForm).subscribe(data => {
-      let xxx = data;
-    });
+    this.authService.login('admin', 'thingtrack');
   }
 }

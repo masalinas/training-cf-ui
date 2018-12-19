@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Product, ProductControllerService } from '../shared/sdk';
 
 @Component({
