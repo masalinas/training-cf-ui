@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Configuration } from './configuration';
 
+import { AuthControllerService } from './api/authController.service';
 import { ProductControllerService } from './api/productController.service';
 
 @NgModule({
@@ -10,6 +11,7 @@ import { ProductControllerService } from './api/productController.service';
   declarations: [],
   exports:      [],
   providers: [
+    AuthControllerService,
     ProductControllerService ]
 })
 export class ApiModule {

@@ -1,6 +1,6 @@
 /**
- * Spring Boot REST API
- * \"Spring Boot REST API for Pivotal Developer Training\"
+ * Training REST API
+ * \"Training REST API for Pivotal Developer Training\"
  *
  * OpenAPI spec version: 1.0.0
  * Contact: miguel@thingtrack.com
@@ -16,8 +16,8 @@ import { HttpClient, HttpHeaders, HttpParams,
          HttpResponse, HttpEvent }                           from '@angular/common/http';
 import { CustomHttpUrlEncodingCodec }                        from '../encoder';
 
-import { Observable }                                        from 'rxjs' // correct Angular 6 error
-//import { Observable }                                      from 'rxjs/Observable'; 
+//import { Observable }                                        from 'rxjs/Observable';
+import { Observable }                                        from 'rxjs';
 
 import { Product } from '../model/product';
 
@@ -58,7 +58,7 @@ export class ProductControllerService {
 
 
     /**
-     * createProduct
+     * Creates a new product.
      * 
      * @param product product
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -73,6 +73,11 @@ export class ProductControllerService {
         }
 
         let headers = this.defaultHeaders;
+
+        // authentication (apiKey) required
+        if (this.configuration.apiKeys["Authorization"]) {
+            headers = headers.set('Authorization', this.configuration.apiKeys["Authorization"]);
+        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -104,7 +109,7 @@ export class ProductControllerService {
     }
 
     /**
-     * deleteProduct
+     * Deletes a product by Id from the system. 404 if the person&#39;s identifier is not found.
      * 
      * @param id id
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -119,6 +124,11 @@ export class ProductControllerService {
         }
 
         let headers = this.defaultHeaders;
+
+        // authentication (apiKey) required
+        if (this.configuration.apiKeys["Authorization"]) {
+            headers = headers.set('Authorization', this.configuration.apiKeys["Authorization"]);
+        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -144,7 +154,7 @@ export class ProductControllerService {
     }
 
     /**
-     * getAllProducts
+     * Returns list of all Products in the system.
      * 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -155,6 +165,11 @@ export class ProductControllerService {
     public getAllProductsUsingGET(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         let headers = this.defaultHeaders;
+
+        // authentication (apiKey) required
+        if (this.configuration.apiKeys["Authorization"]) {
+            headers = headers.set('Authorization', this.configuration.apiKeys["Authorization"]);
+        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -180,7 +195,7 @@ export class ProductControllerService {
     }
 
     /**
-     * getProductById
+     * Returns a specific product by their identifier. 404 if does not exist.
      * 
      * @param id id
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -195,6 +210,11 @@ export class ProductControllerService {
         }
 
         let headers = this.defaultHeaders;
+
+        // authentication (apiKey) required
+        if (this.configuration.apiKeys["Authorization"]) {
+            headers = headers.set('Authorization', this.configuration.apiKeys["Authorization"]);
+        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -220,7 +240,7 @@ export class ProductControllerService {
     }
 
     /**
-     * updateProduct
+     * Updates a product by Id from the system. 404 if the person&#39;s identifier is not found.
      * 
      * @param id id
      * @param productDetails productDetails
@@ -239,6 +259,11 @@ export class ProductControllerService {
         }
 
         let headers = this.defaultHeaders;
+
+        // authentication (apiKey) required
+        if (this.configuration.apiKeys["Authorization"]) {
+            headers = headers.set('Authorization', this.configuration.apiKeys["Authorization"]);
+        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [

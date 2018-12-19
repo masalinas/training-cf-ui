@@ -7,21 +7,19 @@ import { Product, ProductControllerService } from '../shared/sdk';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  // All the types you need already there
   products : Product[];
   displayProducts: Product[];
 
   sortName = null;
   sortValue = null;
 
-  constructor(private productApi: ProductControllerService) {
-  }
+  constructor(private productApi: ProductControllerService) {}
 
   ngOnInit() {
       // recover all products
       this.productApi.getAllProductsUsingGET().subscribe((result: Product[]) => {
         this.products = result;    
-        this.displayProducts = [ ...this.products ]
+        this.displayProducts = [ ...this.products ];
       });
   }
 
@@ -33,10 +31,6 @@ export class ProductComponent implements OnInit {
   }
 
   search(): void {
-    /** filter data **/
-    /*const filterFunc = item => (this.searchAddress ? item.address.indexOf(this.searchAddress) !== -1 : true) && (this.listOfSearchName.length ? this.listOfSearchName.some(name => item.name.indexOf(name) !== -1) : true);
-    const data = this.data.filter(item => filterFunc(item));*/
-
     /** sort data **/
     if (this.sortName) {
       this.displayProducts = this.products.sort((a, b) => (this.sortValue === 'ascend') ? (a[ this.sortName ] > b[ this.sortName ] ? 1 : -1) : (b[ this.sortName ] > a[ this.sortName ] ? 1 : -1));

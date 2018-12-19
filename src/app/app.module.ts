@@ -12,7 +12,7 @@ import { NgZorroAntdModule, NZ_I18N, es_ES } from 'ng-zorro-antd';
 import { AppComponent } from './app.component';
 
 /** import Swagger providers **/
-import { APIS, BASE_PATH } from './shared/sdk';
+import { APIS, BASE_PATH, Configuration } from './shared/sdk';
 
 /** import App Routing Module **/
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +27,20 @@ registerLocaleData(es);
 
 /** import angular envirotment variables **/
 import { environment } from '../environments/environment';
+
+function getConfiguration() {
+  let credentials:  {[ key: string ]: string} = {};
+  credentials["Authorization"] = 'Bearer ' + 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTU0NTIxMDg0NSwiZXhwIjoxNTQ1Mjk3MjQ1fQ.BZVRC9zE0NxjBbF0nERFpnsHdpNJxjy_63NdmrjpMEkrcdJWQx6vDtR3v-xBABLBjUbyZa0o4wn88289W9ScSw';
+
+  return new Configuration({
+      basePath: 'http://localhost:3000',
+      username: 'admin',
+      password: 'thingtrack',
+      apiKeys: credentials,
+      accessToken: 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTU0NTIxMDg0NSwiZXhwIjoxNTQ1Mjk3MjQ1fQ.BZVRC9zE0NxjBbF0nERFpnsHdpNJxjy_63NdmrjpMEkrcdJWQx6vDtR3v-xBABLBjUbyZa0o4wn88289W9ScSw',
+      withCredentials: false
+  });
+}
 
 @NgModule({
   declarations: [
@@ -45,7 +59,9 @@ import { environment } from '../environments/environment';
   ],
   providers: [APIS,
               { provide: BASE_PATH, useValue: environment.basePath },
-              { provide: NZ_I18N, useValue: es_ES }],
+              { provide: NZ_I18N, useValue: es_ES },
+              { provide: Configuration, useFactory: getConfiguration, multi: false}
+             ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

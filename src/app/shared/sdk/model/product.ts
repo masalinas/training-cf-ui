@@ -1,6 +1,6 @@
 /**
- * Spring Boot REST API
- * \"Spring Boot REST API for Pivotal Developer Training\"
+ * Training REST API
+ * \"Training REST API for Pivotal Developer Training\"
  *
  * OpenAPI spec version: 1.0.0
  * Contact: miguel@thingtrack.com
@@ -11,12 +11,30 @@
  */
 
 
+/**
+ * Class representing a Product.
+ */
 export interface Product {
-    active?: boolean;
-    code?: string;
     createdAt?: Date;
-    description?: string;
-    id?: number;
-    price?: number;
+    /**
+     * Unique identifier of the product. No two products can have the same id.
+     */
+    id: number;
     updatedAt?: Date;
+    /**
+     * Code of the product.
+     */
+    code: string;
+    /**
+     * Description of the product.
+     */
+    description?: string;
+    /**
+     * Price of the product.
+     */
+    price: number;
+    /**
+     * Status of the product.
+     */
+    active: boolean;
 }
