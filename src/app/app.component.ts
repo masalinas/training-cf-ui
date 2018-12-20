@@ -13,8 +13,14 @@ export class AppComponent {
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
-    this.authService.login('admin', 'thingtrack').subscribe(data => {    
-      return data;
-    });
+    // Login mockup
+    this.authService.login('admin', 'thingtrack').subscribe(
+      data => {
+        console.log('Observer got data: ' + data)}, 
+      err => {    
+        console.log('Observer got error: ' + err)},
+      () => {
+        console.log('HTTP request completed.')}
+    );
   }
 }

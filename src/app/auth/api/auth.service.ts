@@ -16,10 +16,10 @@ export class AuthService {
         return this.configuration;
     }
 
-    public login(username: String, password: String): Observable<any> {
+    public login(username: string, password: string): Observable<any> {        
         this.loginForm = {};
-        this.loginForm.username = 'admin';
-        this.loginForm.password = 'thingtrack';
+        this.loginForm.username = username;
+        this.loginForm.password = password;
 
         return this.authControllerService.authenticateUserUsingPOST(this.loginForm);
     }        
