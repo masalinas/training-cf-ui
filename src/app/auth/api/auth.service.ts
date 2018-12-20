@@ -1,5 +1,7 @@
 import { Inject, Injectable, Optional } from '@angular/core';
 
+import { Observable }                                        from 'rxjs';
+
 import { LoginForm, AuthControllerService } from '../../shared/sdk'
 import { Configuration } from '../../shared/sdk/configuration';
 
@@ -14,15 +16,11 @@ export class AuthService {
         return this.configuration;
     }
 
-    public login(username: String, password: String) {
+    public login(username: String, password: String): Observable<any> {
         this.loginForm = {};
         this.loginForm.username = 'admin';
         this.loginForm.password = 'thingtrack';
 
-        this.authControllerService.authenticateUserUsingPOST(this.loginForm).subscribe(data => {
-            this.configuration = data;
-
-            return data;
-        });
+        return this.authControllerService.authenticateUserUsingPOST(this.loginForm);
     }        
 }

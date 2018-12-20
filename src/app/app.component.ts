@@ -13,6 +13,8 @@ export class AppComponent {
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
-    //this.authService.login('admin', 'thingtrack');
+    this.authService.login('admin', 'thingtrack').subscribe(data => {    
+      return data;
+    });
   }
 }
