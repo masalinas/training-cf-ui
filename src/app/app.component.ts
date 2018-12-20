@@ -15,8 +15,11 @@ export class AppComponent {
   ngOnInit() {
     // Login mockup
     this.authService.login('admin', 'thingtrack').subscribe(
-      data => {
-        console.log('HTTP response: ' + JSON.stringify(data))}, 
+      credentials => {
+        // set credential configuration
+        this.authService.setConfiguration(credentials);
+
+        console.log('HTTP response: ' + JSON.stringify(credentials))}, 
       err => {    
         console.log('HTTP Error: ' + err)},
       () => {

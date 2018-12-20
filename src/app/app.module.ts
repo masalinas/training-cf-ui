@@ -11,11 +11,11 @@ import { NgZorroAntdModule, NZ_I18N, es_ES } from 'ng-zorro-antd';
 /** import main App Component **/
 import { AppComponent } from './app.component';
 
-/** import Swagger providers **/
-import { BASE_PATH } from './shared/sdk';
-
 /** import App Routing Module **/
 import { AppRoutingModule } from './app-routing.module';
+
+/** import Swagger providers **/
+import { BASE_PATH } from './shared/sdk';
 
 /** import auth Module **/
 import { AuthModule } from './auth/auth.module';
