@@ -16,9 +16,9 @@ export class AppComponent {
     // Login mockup
     this.authService.login('admin', 'thingtrack').subscribe(
       data => {
-        console.log('Observer got data: ' + data)}, 
+        console.log('HTTP response: ' + JSON.stringify(data))}, 
       err => {    
-        console.log('Observer got error: ' + err)},
+        console.log('HTTP Error: ' + err)},
       () => {
         console.log('HTTP request completed.')}
     );
