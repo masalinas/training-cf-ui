@@ -6,8 +6,6 @@ import { Configuration } from './configuration';
 import { AuthControllerService } from './api/authController.service';
 import { ProductControllerService } from './api/productController.service';
 
-import {AuthService} from '../../auth/api/auth.service';
-
 @NgModule({
   imports:      [ CommonModule, HttpClientModule ],
   declarations: [],
