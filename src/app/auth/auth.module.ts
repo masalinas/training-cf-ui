@@ -8,10 +8,10 @@ import { environment } from '../../environments/environment';
 /** import Swagger providers **/
 import { ApiModule, Configuration, ConfigurationParameters } from '../shared/sdk';
 
-export function apiConfigFactory (): Configuration {
+function apiConfigFactory (): Configuration {
     let credentials:  {[ key: string ]: string} = {};
     credentials["Authorization"] = 'Bearer ' + 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTU0NTIxMDg0NSwiZXhwIjoxNTQ1Mjk3MjQ1fQ.BZVRC9zE0NxjBbF0nERFpnsHdpNJxjy_63NdmrjpMEkrcdJWQx6vDtR3v-xBABLBjUbyZa0o4wn88289W9ScSw';
-  
+      
     //this.authService.getConfiguration();
     
     const params: ConfigurationParameters = {
@@ -24,7 +24,7 @@ export function apiConfigFactory (): Configuration {
     }
   
     return new Configuration(params);
-  }
+}
 
 @NgModule({
     imports: [
