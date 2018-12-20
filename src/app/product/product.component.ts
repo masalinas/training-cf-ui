@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Product, ProductControllerService } from '../shared/sdk';
 
-import { AuthService, AuthService } from "../auth/api/auth.service";
+import { AuthService } from "../auth/api/auth.service";
 
 @Component({
   selector: 'app-product',
@@ -37,12 +37,6 @@ export class ProductComponent implements OnInit {
       () => {
         console.log('HTTP request completed.')}
     );
-
-    // recover all products
-    /*this.productApi.getAllProductsUsingGET().subscribe((result: Product[]) => {
-      this.products = result;    
-      this.displayProducts = [ ...this.products ];
-    });*/
   }
 
   sort(sort: { key: string, value: string }): void {
