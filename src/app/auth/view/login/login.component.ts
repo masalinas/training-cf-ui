@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Location } from '@angular/common'; 
 
 import { AuthService} from '../../api/auth.service';
 
@@ -29,15 +30,20 @@ export class LoginComponent implements OnInit {
         // set credential configuration
         this.authService.setConfiguration(credentials);
 
-        console.log('HTTP response: ' + JSON.stringify(credentials))}, 
+        console.log('HTTP response: ' + JSON.stringify(credentials));
+
+        this.location.go('/product');
+      }, 
       err => {    
-        console.log('HTTP Error: ' + err)},
+        console.log('HTTP Error: ' + err);
+      },
       () => {
-        console.log('HTTP request completed.')}
+        console.log('HTTP request completed.');
+      }
     );
   }
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService) {}
+  constructor( private location: Location, private formBuilder: FormBuilder, private authService: AuthService) {}
 
   ngOnInit() {
     this.validateForm = this.formBuilder.group({
