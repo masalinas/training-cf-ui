@@ -20,7 +20,9 @@ import { BASE_PATH } from './shared/sdk';
 /** import auth Module **/
 import { AuthModule } from './auth/auth.module';
 
-/** import Product View Component **/
+/** import Component Views **/
+import { LoginComponent } from './auth/view/login/login.component';
+import { SignupComponent } from './auth/view/signup/signup.component';
 import { ProductComponent } from './product/product.component';
 
 /** import angular i18n locale Module and register **/
@@ -49,6 +51,8 @@ import { environment } from '../environments/environment';
   ],
   declarations: [
     AppComponent, 
+    LoginComponent,
+    SignupComponent,
     ProductComponent
   ],             
   bootstrap: [ AppComponent ]
