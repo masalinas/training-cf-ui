@@ -1,12 +1,19 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AuthService } from './api/auth.service';
-
-/** import angular envirotment variables **/
-import { environment } from '../../environments/environment';
+/** import Alibaba antd Designer Module **/
+import { NgZorroAntdModule, NZ_I18N, es_ES } from 'ng-zorro-antd';
 
 /** import Swagger providers **/
 import { ApiModule, Configuration, ConfigurationParameters } from '../shared/sdk';
+
+/** import Component Views **/
+import { LoginComponent } from './view/login/login.component';
+import { SignupComponent } from './view/signup/signup.component';
+
+/** import Services **/
+import { AuthService } from './api/auth.service';
 
 export function apiConfigFactory (): Configuration {
     // recover params credentials if exist
@@ -35,10 +42,17 @@ export function apiConfigFactory (): Configuration {
 
 @NgModule({
     imports: [
+        BrowserModule,
+        FormsModule, 
+        ReactiveFormsModule,
+        NgZorroAntdModule,
         ApiModule.forRoot(apiConfigFactory)
     ],
     providers: [ AuthService ],
-    declarations: [],             
+    declarations: [
+        LoginComponent,
+        SignupComponent
+    ],             
     bootstrap: []
   })
 export class AuthModule {

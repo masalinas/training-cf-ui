@@ -19,11 +19,7 @@ import { BASE_PATH } from './shared/sdk';
 
 /** import auth Module **/
 import { AuthModule } from './auth/auth.module';
-
-/** import Component Views **/
-import { LoginComponent } from './auth/view/login/login.component';
-import { SignupComponent } from './auth/view/signup/signup.component';
-import { ProductComponent } from './dashboard/view/product/product.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 /** import angular i18n locale Module and register **/
 import { CommonModule, registerLocaleData } from '@angular/common';
@@ -43,17 +39,15 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    AuthModule
+    AuthModule,
+    DashboardModule
   ],
   providers: [
     { provide: BASE_PATH, useValue: environment.basePath },
     { provide: NZ_I18N, useValue: es_ES }
   ],
   declarations: [
-    AppComponent, 
-    LoginComponent,
-    SignupComponent,
-    ProductComponent
+    AppComponent
   ],             
   bootstrap: [ AppComponent ]
 })
