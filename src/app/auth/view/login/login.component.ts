@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { Location } from '@angular/common'; 
+import { Router } from '@angular/router';
 
 import { AuthService} from '../../api/auth.service';
 
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
         console.log('HTTP response: ' + JSON.stringify(credentials));
 
-        this.location.go('/product');
+        this.router.navigateByUrl('/product');
       }, 
       err => {    
         console.log('HTTP Error: ' + err);
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  constructor( private location: Location, private formBuilder: FormBuilder, private authService: AuthService) {}
+  constructor( private router: Router, private formBuilder: FormBuilder, private authService: AuthService) {}
 
   ngOnInit() {
     this.validateForm = this.formBuilder.group({
