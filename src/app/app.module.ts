@@ -23,7 +23,7 @@ import { AuthModule } from './auth/auth.module';
 /** import Component Views **/
 import { LoginComponent } from './auth/view/login/login.component';
 import { SignupComponent } from './auth/view/signup/signup.component';
-import { ProductComponent } from './product/product.component';
+import { ProductComponent } from './dashboard/view/product/product.component';
 
 /** import angular i18n locale Module and register **/
 import { CommonModule, registerLocaleData } from '@angular/common';
