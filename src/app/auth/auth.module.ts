@@ -31,20 +31,6 @@ export function apiConfigFactory (): Configuration {
     
     // return configuration
     return new Configuration(configurationParameters);
-
-    /*let credentials:  {[ key: string ]: string} = {};
-    credentials["Authorization"] = 'Bearer ' + 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTU0NTI5NzkwMSwiZXhwIjoxNTQ1Mzg0MzAxfQ.gmzp7yQA7UXpYdBz8k9lVI_Uv02sHHdKgxGZqdJDJIGNkyXW7GkfxOmAMdLpZl7KtfXXebyQP63A4ggyyXzesw';    
-    
-    const configurationParameters: ConfigurationParameters = {
-      basePath: environment.basePath,
-      username: 'admin',
-      password: 'thingtrack',
-      apiKeys: credentials,
-      accessToken: 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTU0NTI5NzkwMSwiZXhwIjoxNTQ1Mzg0MzAxfQ.gmzp7yQA7UXpYdBz8k9lVI_Uv02sHHdKgxGZqdJDJIGNkyXW7GkfxOmAMdLpZl7KtfXXebyQP63A4ggyyXzesw',
-      withCredentials: false
-    }
-  
-    return new Configuration(configurationParameters);*/
 }
 
 @NgModule({

@@ -12,23 +12,19 @@ export class LoginComponent implements OnInit {
   validateForm: FormGroup;
 
   submitForm(): void {
+    // validate form
     for (const i in this.validateForm.controls) {
       this.validateForm.controls[ i ].markAsDirty();
       this.validateForm.controls[ i ].updateValueAndValidity();
     }
-  }
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService) {}
+    // check form status
+    if (this.validateForm.invalid)
+      return;    
 
-  ngOnInit() {
-    this.validateForm = this.formBuilder.group({
-      userName: [ null, [ Validators.required ] ],
-      password: [ null, [ Validators.required ] ],
-      remember: [ true ]
-    });
-
-    // Login mockup
-    this.authService.login('admin', 'thingtrack').subscribe(
+    // get access token from login service
+    this.authService.login(this.validateForm.controls.userName.value, 
+                           this.validateForm.controls.password.value).subscribe(
       credentials => {
         // set credential configuration
         this.authService.setConfiguration(credentials);
@@ -39,5 +35,15 @@ export class LoginComponent implements OnInit {
       () => {
         console.log('HTTP request completed.')}
     );
+  }
+
+  constructor(private formBuilder: FormBuilder, private authService: AuthService) {}
+
+  ngOnInit() {
+    this.validateForm = this.formBuilder.group({
+      userName: [ null, [ Validators.required ] ],
+      password: [ null, [ Validators.required ] ],
+      remember: [ true ]
+    });
   }
 }
