@@ -5,9 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-/** import Alibaba antd Designer Module **/
-import { NgZorroAntdModule, NZ_I18N, es_ES } from 'ng-zorro-antd';
-
 /** import main App Component **/
 import { AppComponent } from './app.component';
 
@@ -17,9 +14,12 @@ import { AppRoutingModule } from './app-routing.module';
 /** import Swagger providers **/
 import { BASE_PATH } from './shared/sdk';
 
-/** import auth Module **/
+/** import Modules **/
 import { AuthModule } from './auth/auth.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+
+/** import Alibaba antd Designer Module **/
+import { NgZorroAntdModule, NZ_I18N, es_ES } from 'ng-zorro-antd';
 
 /** import angular i18n locale Module and register **/
 import { CommonModule, registerLocaleData } from '@angular/common';
