@@ -12,7 +12,7 @@ export class AuthService {
     constructor(private authControllerService: AuthControllerService) { }
 
     public setConfiguration(credentials) {
-          const params: ConfigurationParameters = {
+        const params: ConfigurationParameters = {
             basePath: environment.basePath,
             username: credentials.username,
             accessToken: credentials.accessToken,

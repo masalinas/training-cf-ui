@@ -8,7 +8,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { NgZorroAntdModule, NZ_I18N, es_ES } from 'ng-zorro-antd';
 
 /** import Component Views **/
-import { DashboardComponent } from './dasboard.component';
+import { DashboardComponent } from './dashboard.component';
 import { ProductComponent } from './view/product/product.component';
 
 @NgModule({
