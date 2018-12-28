@@ -12,6 +12,16 @@ import { AuthService} from '../../api/auth.service';
 export class LoginComponent implements OnInit {
   validateForm: FormGroup;
 
+  constructor( private router: Router, private formBuilder: FormBuilder, private authService: AuthService) {}
+
+  ngOnInit() {
+    this.validateForm = this.formBuilder.group({
+      userName: [ null, [ Validators.required ] ],
+      password: [ null, [ Validators.required ] ],
+      remember: [ true ]
+    });
+  }
+
   submitForm(): void {
     // validate form
     for (const i in this.validateForm.controls) {
@@ -25,11 +35,7 @@ export class LoginComponent implements OnInit {
 
     // get access token from login service
     this.authService.login(this.validateForm.controls.userName.value, 
-                           this.validateForm.controls.password.value).subscribe(
-      credentials => {
-        // set credential configuration
-        this.authService.setConfiguration(credentials);
-
+                           this.validateForm.controls.password.value).subscribe(credentials => {
         console.log('HTTP response: ' + JSON.stringify(credentials));
 
         this.router.navigateByUrl('/product');
@@ -41,15 +47,5 @@ export class LoginComponent implements OnInit {
         console.log('HTTP request completed.');
       }
     );
-  }
-
-  constructor( private router: Router, private formBuilder: FormBuilder, private authService: AuthService) {}
-
-  ngOnInit() {
-    this.validateForm = this.formBuilder.group({
-      userName: [ null, [ Validators.required ] ],
-      password: [ null, [ Validators.required ] ],
-      remember: [ true ]
-    });
-  }
+  }  
 }

@@ -33,15 +33,15 @@ export class AuthControllerService {
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
 
-    //constructor(protected httpClient: HttpClient, @Optional()@Inject(BASE_PATH) basePath: string, @Optional() configuration: Configuration) {
-    constructor(protected httpClient: HttpClient, @Optional()@Inject(BASE_PATH) basePath: string) {
+    constructor(protected httpClient: HttpClient, @Optional()@Inject(BASE_PATH) basePath: string, @Optional() configuration: Configuration) {
+    //constructor(protected httpClient: HttpClient, @Optional()@Inject(BASE_PATH) basePath: string) {
         if (basePath) {
             this.basePath = basePath;
         }
-        /*if (configuration) {
+        if (configuration) {
             this.configuration = configuration;
             this.basePath = basePath || configuration.basePath || this.basePath;
-        }*/
+        }
     }
 
     /**
