@@ -11,13 +11,16 @@ import { NgZorroAntdModule, NZ_I18N, es_ES } from 'ng-zorro-antd';
 import { DashboardComponent } from './dashboard.component';
 import { ProductComponent } from './view/product/product.component';
 
+/** import App Routing Module **/
+import { DashboardRoutingModule } from './dashboard-routing.module';
+
 @NgModule({
     imports: [
       BrowserModule,
       FormsModule, 
       ReactiveFormsModule,
       NgZorroAntdModule,
-      AppRoutingModule
+      DashboardRoutingModule
     ],
     providers: [],
     declarations: [

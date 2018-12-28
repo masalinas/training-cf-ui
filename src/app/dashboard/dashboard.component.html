@@ -2,7 +2,7 @@
     <nz-header style="position:fixed; width:100%">
       <img class="logo" src="../../../../assets/thingtrack-logo.svg" />
       <ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" style="line-height: 64px;">
-        <li nz-menu-item routerLink="/product" [nzSelected]=true><i class="anticon anticon-skin"></i>Products</li>
+        <li nz-menu-item [routerLink]="['./product']" [nzSelected]=true><i class="anticon anticon-skin"></i>Products</li>
         <!--<li nz-menu-item routerLink="/order"><i class="anticon anticon-book"></i>Orders</li>-->
       </ul>
     </nz-header>
