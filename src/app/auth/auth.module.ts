@@ -20,7 +20,7 @@ export function apiConfigFactory (): Configuration {
     let params = localStorage.getItem('params');
 
     if (params == null)
-        return null;
+        return new Configuration();
 
     let result = JSON.parse(params);
 
@@ -56,5 +56,6 @@ export function apiConfigFactory (): Configuration {
     bootstrap: []
   })
 export class AuthModule {
-    constructor(private authService: AuthService) { }
+    constructor(private authService: AuthService) {        
+    }
 }

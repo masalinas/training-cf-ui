@@ -19,24 +19,11 @@ export class ProductComponent implements OnInit {
   constructor(private productApi: ProductControllerService, private authService: AuthService) {}
 
   ngOnInit() {
-    // Login mockup
-    this.authService.login('admin', 'thingtrack').subscribe(
-      credentials => {
-        // set credential configuration
-        this.authService.setConfiguration(credentials);
-
-        // recover all products
-        this.productApi.getAllProductsUsingGET().subscribe((result: Product[]) => {
-          this.products = result;    
-          this.displayProducts = [ ...this.products ];
-        });
-
-        console.log('HTTP response: ' + JSON.stringify(credentials))}, 
-      err => {    
-        console.log('HTTP Error: ' + err)},
-      () => {
-        console.log('HTTP request completed.')}
-    );
+    // recover all products
+    this.productApi.getAllProductsUsingGET().subscribe((result: Product[]) => {
+      this.products = result;    
+      this.displayProducts = [ ...this.products ];
+    });
   }
 
   sort(sort: { key: string, value: string }): void {
