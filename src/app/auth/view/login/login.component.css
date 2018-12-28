@@ -1,12 +1,24 @@
 .login-form {
+  padding: 10px;
+  background-color: #001529;
+  border-radius: 10px;
   max-width: 300px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
 }
+
 .login-form-forgot {
   float: right;
 }
+
 .login-form-button {
   width: 100%;
+}
+
+.remember {
+  color: white
 }
