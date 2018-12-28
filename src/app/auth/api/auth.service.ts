@@ -15,24 +15,26 @@ export class AuthService {
         return Observable.create((observer: Observer<any>) => {
             this.authControllerService.authenticateUserUsingPOST({username: username, password: password})
                 .subscribe(result => {   
+                    // STEP01: save in localstorage the credentials
                     const params: ConfigurationParameters = {
                         basePath: environment.basePath,
                         username: result.username,
                         accessToken: result.accessToken,
                         withCredentials: false
                     }
-            
-                    // save in localstorage my configuration
+                                
                     localStorage.setItem('params', JSON.stringify(params));
 
-                    // set new configuration
+                    // STEP02: modify the configuration service
                     let credentials:  {[ key: string ]: string} = {};
                     credentials["Authorization"] = 'Bearer ' + result.accessToken;  
 
-                    params.apiKeys = credentials;
-                    params.accessToken = 'Bearer ' + result.accessToken;
-
-                    this.configuration = new Configuration(params);
+                    this.configuration.basePath = environment.basePath;
+                    this.configuration.username = result.username;
+                    this.configuration.password = result.password;
+                    this.configuration.accessToken = 'Bearer ' + result.accessToken;
+                    this.configuration.apiKeys = credentials;
+                    this.configuration.withCredentials = false;
                     
                     // send result event
                     observer.next(result);
@@ -45,7 +47,5 @@ export class AuthService {
                 }
             );
         });
-
-        //return this.authControllerService.authenticateUserUsingPOST({username: username, password: password});
     }        
 }

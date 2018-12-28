@@ -20,7 +20,7 @@ export function apiConfigFactory (): Configuration {
     let params = localStorage.getItem('params');
 
     if (params == null)
-        return;
+        return new Configuration();
 
     let result = JSON.parse(params);
 
