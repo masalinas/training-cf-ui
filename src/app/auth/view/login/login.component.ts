@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
                            this.validateForm.controls.password.value).subscribe(credentials => {
         console.log('HTTP response: ' + JSON.stringify(credentials));
 
-        this.router.navigateByUrl('/product');
+        this.router.navigateByUrl('/dashboard');
       }, 
       err => {    
         console.log('HTTP Error: ' + err);
