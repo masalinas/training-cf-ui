@@ -13,6 +13,6 @@ export class DashboardComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    //this.router.navigateByUrl('/product');
+    this.router.navigateByUrl('/dashboard/product');
   }
 }
