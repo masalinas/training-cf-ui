@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
   title = 'Training Pîvotal';
 
-  constructor( private router: Router) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.router.navigateByUrl('/product');
